@@ -93,8 +93,6 @@
   font-style: normal;
 }
 
-<<<<<<< HEAD
-=======
 @import url("https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Gloria+Hallelujah&display=swap");
 
 .gloria-hallelujah-regular {
@@ -103,7 +101,6 @@
   font-style: normal;
 }
 
->>>>>>> fix
 .header {
   display: flex;
   justify-content: space-between;
@@ -134,17 +131,6 @@
   transition: opacity 0.3s ease-in-out;
 }
 
-<<<<<<< HEAD
-@import url("https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Gloria+Hallelujah&display=swap");
-
-.gloria-hallelujah-regular {
-  font-family: "Gloria Hallelujah", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-=======
->>>>>>> fix
 .title {
   font-size: 28px;
   margin-left: 20px;
