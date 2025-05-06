@@ -1,0 +1,205 @@
+.container {
+  text-align: center;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  font-family: "NanumSquareNeoLight";
+  font-size: 15px;
+}
+
+.difficultyOptions {
+  display: flex;
+  gap: 1px;
+  margin-top: 5px;
+  font-family: "NanumSquareNeoLight";
+}
+
+.difficultyButton {
+  width: 150px;
+  height: 60px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+  font-family: "NanumSquareNeoLight";
+}
+
+.difficultyButton:nth-child(1) {
+  background-color: #ffe6e6;
+}
+
+.difficultyButton:nth-child(1):hover {
+  background-color: #ffc2c2;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.difficultyButton:nth-child(2) {
+  background-color: #ffcccc;
+}
+
+.difficultyButton:nth-child(2):hover {
+  background-color: #ff9999;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.difficultyButton:nth-child(3) {
+  background-color: #ff9999;
+}
+
+.difficultyButton:nth-child(3):hover {
+  background-color: #ff6666;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.difficultyButton:nth-child(4) {
+  background-color: #ff6666;
+  color: white;
+}
+
+.difficultyButton:nth-child(4):hover {
+  background-color: #e63939;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.selected {
+  border: 3px solid #000000;
+}
+
+.topicInput {
+  width: 500px;
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 5px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 30px;
+  font-family: "NanumSquareNeo";
+}
+
+.tagContainer {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 1px;
+  margin-bottom: 20px;
+  width: 100%;
+  justify-content: center;
+  cursor: pointer;
+  align-items: center;
+}
+
+.tag {
+  padding: 15px 20px;
+  background-color: #fdefef;
+  border-radius: 10px;
+  font-size: 0.9em;
+  flex: 1;
+  max-width: 100px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.tag:hover {
+  background-color: #ffb3b3;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.selectedTag {
+  border: 2px solid #ff5f5f;
+  background-color: #ffd1d1;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.startButton {
+  background-color: #ff5f5f;
+  color: white;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 15px;
+  padding: 15px 0;
+  width: 230px;
+  cursor: pointer;
+
+  letter-spacing: 0.8px;
+  font-family: "NanumSquareNeo";
+  transition: transform 0.3s ease, background-color 0.3s;
+}
+
+.startButton:hover {
+  background-color: #e53e3e;
+  box-shadow: 0 4px 15px rgba(229, 62, 62, 0.5);
+  transform: scale(1.05);
+}
+
+.questionButton {
+  background-color: #ffe2e2;
+  color: #ff5f5f;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 15px;
+  padding: 15px 0;
+  width: 230px;
+  cursor: pointer;
+  font-family: "NanumSquareNeo";
+  transition: transform 0.3s ease, background-color 0.3s;
+}
+
+.questionButton:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popupContent {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.popupContent button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #ffd1d1;
+  color: black;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.loadingcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.waittext {
+  font-size: 25px;
+  color: #333;
+  font-family: "MaruBuri";
+  text-align: center;
+  margin-top: 20%;
+}

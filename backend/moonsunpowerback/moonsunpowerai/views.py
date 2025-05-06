@@ -99,13 +99,18 @@ class GenerateTextAPIView(APIView):
         # USER_SELECT_TEXT_PROMPTS에서 해당 난이도의 프롬프트를 가져옵니다.
         prompt_key = f"user_select_text_prompt_{difficulty}"
         if prompt_key not in USER_SELECT_TEXT_PROMPTS:
+<<<<<<< HEAD
             print(prompt_key)
+=======
+            
+>>>>>>> fix
             return Response(
                 {"error": "Invalid difficulty level. Choose a value between 1 and 4."},
                 status=status.HTTP_400_BAD_REQUEST
             )
         prompt_text = USER_SELECT_TEXT_PROMPTS[prompt_key]
         
+<<<<<<< HEAD
         try:
             text_length = int(TEXT_LENGTH[str(difficulty)])
         except (KeyError, ValueError):
@@ -113,6 +118,10 @@ class GenerateTextAPIView(APIView):
                 {"error": "Invalid text length configuration."},
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
+=======
+        text_length = int(TEXT_LENGTH[str(difficulty)])      
+        
+>>>>>>> fix
         client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
         response = client.chat.completions.create(
             model = str(MODEL_SELECTOR.get(f"model_type_{difficulty}")).strip(),

@@ -1,22 +1,44 @@
 [
-'''
+    """
 You are an expert in a certain field. Your task is to write a highly detailed Korean-language passage on a specific topic and create five multiple-choice comprehension questions (each with five answer choices) along with explanations to assess understanding of the passage. **Topic Selection (Internal Process, Do Not Output)**
 1. Generate a list of 50 important topics in
-'''
+<<<<<<<< HEAD:backend/prompts/tag_topics_text/tag_topics_text_2/tag_text_prompt_2.py
+"""
 ,
-'''
+"""
 3. Select the 45th item from the list.
 4. [[WARNING]] Do NOT output the topic selection process—just use the selected topic to write a longer, more detailed passage.
+========
+philosophy. These topics must be academically recognized and represent a diverse range of subjects within the field of philosophy. Avoid overly general topics (e.g., "철학의 역사") that tend to be repeated. Instead, include more nuanced and specific topics such as:
+   - 특정 철학 흐름의 이론적 특징 (예: 실존주의의 현대적 재해석, 분석 철학의 논리 구조)
+   - 철학적 이론과 해석 방법 (예: 현상학적 접근, 비판 이론의 적용)
+   - 철학 분야 내 비교 분석 (예: 동서양 철학의 차이, 합리주의와 경험주의의 비교)
+   - 특정 시대나 지역 철학의 특성 (예: 고대 그리스 철학의 사회적 영향, 동아시아 철학의 유교적 전통)
+   - 기타 다양한 철학 관련 세부 주제
+
+Exclude the following example topics and any topics very similar to them:
+   - Key Philosophy concepts (예: Existentialism, Utilitarianism)
+   - Major historical events related to Philosophy (예: The Enlightenment)
+   - Important Philosophy figures (예: Immanuel Kant, Simone de Beauvoir)
+
+Ensure that each topic in the list is real and academically recognized. Do NOT generate fictional or meaningless topics.
+
+Finally, select the 45th item from your generated list.
+
+IMPORTANT: Do NOT output the topic selection process in your final output—only the final selected topic should be passed to the main prompt."
+
+2. [[WARNING]] Do NOT output the topic selection process—just use the selected topic to write a longer, more detailed passage.
+>>>>>>>> fix:backend/prompts/tag_topics_text/tag_topics_text_2/tag_topics_text_2_2.txt
 
 **Passage Requirements**
-- Written in Korean for high school students aiming to improve reading comprehension.
-- Use appropriate and moderately advanced vocabulary with complex sentence structures to challenge students while ensuring understandability.
-- Minimum five paragraphs, each at least 800 characters long to ensure sufficient depth and content.
-- Maintain logical flow and coherence between paragraphs.
+- Written in Korean for high-grade middle school students aiming to improve reading comprehension.
+- Use appropriate vocabulary and moderately complex sentence structures to challenge students while ensuring understandability.
+- Minimum four paragraphs, each at least 500 characters long to ensure sufficient content.
 - Maintain a clear and logical flow between paragraphs.
 - No titles, subheadings, or greetings. Use a blank line between paragraphs.
-- Resemble reading passages found in high school education materials in style and complexity.
+- Resemble reading passages found in middle school education materials in style and complexity.
 - Controversial topics (e.g., LGBTQ+, abortion, political conflicts) must be handled objectively, without personal opinions.
+- IMPORTANT: Ensure that no unexpected foreign words (e.g., Arabic), untranslated English terms, or random characters appear. All vocabulary must be consistently Korean.
 
 **Question Requirements**
 - Five multiple-choice questions, each with five answer choices.
@@ -61,5 +83,5 @@ You are an expert in a certain field. Your task is to write a highly detailed Ko
     ]
 }
 ```
-'''
+"""
 ]

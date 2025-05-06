@@ -1,0 +1,194 @@
+@font-face {
+  font-family: "YoonChildfundkoreaManSeh";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2408@1.0/YoonChildfundkoreaManSeh.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "BMDOHYEON";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import url("//fonts.googleapis.com/earlyaccess/hanna.css");
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "NanumSquareNeoLight";
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.leftContainer {
+  flex: 4.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoImage {
+  width: 100%;
+  margin-left: -20%;
+}
+
+.rightContainer {
+  flex: 5.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  padding-left: 2rem;
+}
+
+.title {
+  font-size: 60px;
+  color: #000000;
+  margin-bottom: -10px;
+  margin-top: -20px;
+}
+
+.description {
+  font-size: 22px;
+  line-height: 1.3;
+  color: #2d2d2d;
+  margin-bottom: 40px;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 50%;
+  justify-content: center;
+}
+
+.startButton,
+.questionButton {
+  background-color: #ff0808;
+  color: white;
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 1.2rem;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.startButton:hover,
+.questionButton:hover {
+  background-color: #ff3f3f;
+  transform: scale(1.05);
+}
+
+.questionButton {
+  background-color: white;
+  color: #ff0808;
+  border: 2px solid #ff0808;
+}
+
+.questionButton:hover {
+  background-color: #ff0808;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .mobileContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 16px;
+    height: 100vh;
+  }
+
+  .logoImage {
+    margin-left: 0.1px;
+    width: 50%;
+    margin-bottom: 16px;
+  }
+
+  .title {
+    font-size: 24px;
+    font-family: "NanumSquareNeoLight";
+    margin-bottom: 1px;
+  }
+
+  .mobileMessage1 {
+    font-size: 17px;
+    margin-bottom: 27px;
+  }
+  .mobileMessage2 {
+    font-size: 14px;
+
+    color: blue;
+  }
+  .buttonContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 10px;
+  }
+
+  .startButton,
+  .questionButton {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    border-radius: 8px;
+    font-family: "NanumSquareNeoLight";
+    cursor: pointer;
+    border: none;
+  }
+
+  .startButton {
+    background-color: red;
+    color: white;
+  }
+
+  .questionButton {
+    background-color: white;
+    color: red;
+    border: 2px solid red;
+  }
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  background-color: #f9f9f9;
+  color: #333;
+  font-size: 14px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  border-top: 1px solid #ddd;
+}
+
+.footerLink {
+  color: #333;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.footerLink:hover {
+  color: #ff0808;
+}
