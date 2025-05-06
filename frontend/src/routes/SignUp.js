@@ -11,47 +11,23 @@ function SignUp() {
     email: "",
     nickname: "",
     birth_date: "",
-<<<<<<< HEAD
-=======
     profile_image: null,
->>>>>>> fix
   });
 
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
-<<<<<<< HEAD
-=======
   const [showModal, setShowModal] = useState(false);
   const [previewImage, setPreviewImage] = useState(null);
->>>>>>> fix
   const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-<<<<<<< HEAD
-
-    // 아이디: 영어 + 숫자만 입력 가능하도록 수정
-    if (name === "username" && !/^[a-zA-Z0-9]*$/.test(value)) {
-      return;
-    }
-
-    // 닉네임: 3글자 이상 입력 요구
-    if (name === "nickname" && value.length > 0 && value.length < 3) {
-      setError("닉네임은 3글자 이상이어야 합니다.");
-    } else {
-      setError("");
-    }
-
-=======
->>>>>>> fix
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
   };
 
-<<<<<<< HEAD
-=======
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -63,15 +39,11 @@ function SignUp() {
     }
   };
 
->>>>>>> fix
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     setSuccess("");
 
-<<<<<<< HEAD
-    //  아이디: 영어+숫자 조합, 4~20자
-=======
     if (formData.password !== formData.confirmPassword) {
       alert("비밀번호가 일치하지 않습니다.");
       return;
@@ -131,26 +103,17 @@ function SignUp() {
     setError("");
     setSuccess("");
 
->>>>>>> fix
     const usernameRegex = /^[a-zA-Z0-9]{4,20}$/;
     if (!usernameRegex.test(formData.username)) {
       alert("아이디는 영어 및 숫자로 이루어진 4~20자여야 합니다.");
       return;
     }
 
-<<<<<<< HEAD
-    //  비밀번호 필수 입력 확인
-=======
->>>>>>> fix
     if (!formData.password.trim()) {
       alert("비밀번호를 입력하세요.");
       return;
     }
 
-<<<<<<< HEAD
-    //  비밀번호: 특수문자 + 숫자 + 영어 포함 & 최소 8자 이상
-=======
->>>>>>> fix
     const passwordRegex =
       /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).{8,}$/;
     if (!passwordRegex.test(formData.password)) {
@@ -160,37 +123,16 @@ function SignUp() {
       return;
     }
 
-<<<<<<< HEAD
-    //  비밀번호 확인
-=======
->>>>>>> fix
     if (formData.password !== formData.confirmPassword) {
       alert("비밀번호가 일치하지 않습니다.");
       return;
     }
 
-<<<<<<< HEAD
-    //  닉네임: 최소 3글자 이상
-=======
->>>>>>> fix
     if (formData.nickname.length < 3) {
       alert("닉네임은 3글자 이상이어야 합니다.");
       return;
     }
 
-<<<<<<< HEAD
-    //  생년월일 기본값 설정 (입력하지 않으면 2000-01-01)
-    const birthDate = formData.birth_date ? formData.birth_date : "2000-01-01";
-
-    const requestData = {
-      username: formData.username,
-      password: formData.password,
-      email: formData.email,
-      nickname: formData.nickname,
-      birth_date: birthDate,
-      name: formData.name,
-    };
-=======
     const birthDate = formData.birth_date ? formData.birth_date : "2000-01-01";
 
     const formDataToSend = new FormData();
@@ -203,27 +145,17 @@ function SignUp() {
     if (formData.profile_image) {
       formDataToSend.append("profile_image", formData.profile_image);
     }
->>>>>>> fix
 
     try {
       const response = await fetch("https://moonsunpower.com/user/signup/", {
         method: "POST",
-<<<<<<< HEAD
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(requestData),
-=======
         body: formDataToSend,
->>>>>>> fix
       });
 
       const data = await response.json();
 
       if (response.ok) {
-<<<<<<< HEAD
-        alert("회원가입이 완료되었습니다!");
-=======
         alert("회원가입이 완료되었습니다:)");
->>>>>>> fix
         setSuccess("회원가입이 완료되었습니다!");
 
         if (data.token) {
@@ -239,98 +171,6 @@ function SignUp() {
   };
 
   return (
-<<<<<<< HEAD
-    <div className={styles.signupContainer}>
-      <h2 className={styles.SignUp}>회원가입</h2>
-      {error && <p className={styles.error}>{error}</p>}
-      {success && <p className={styles.success}>{success}</p>}
-      <form onSubmit={handleSubmit} className={styles.signupForm}>
-        <div className={styles.formGroup}>
-          <label htmlFor="username">아이디 *</label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            placeholder="아이디를 입력하세요. (영어 및 숫자 4~20자)"
-            value={formData.username}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className={styles.formGroup}>
-          <label htmlFor="name">이름 *</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="이름을 입력하세요."
-            value={formData.name}
-            onChange={handleChange}
-          />
-        </div>
-        <div className={styles.formGroup}>
-          <label htmlFor="password">비밀번호 *</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="비밀번호를 입력하세요. (영어,숫자,특수문자 모두 포함) "
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className={styles.formGroup}>
-          <label htmlFor="confirmPassword">비밀번호 확인 *</label>
-          <input
-            type="password"
-            id="confirmPassword"
-            name="confirmPassword"
-            placeholder="비밀번호를 다시 입력하세요."
-            value={formData.confirmPassword}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className={styles.formGroup}>
-          <label htmlFor="email">이메일 *</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="이메일을 입력하세요."
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className={styles.formGroup}>
-          <label htmlFor="nickname">닉네임 *</label>
-          <input
-            type="text"
-            id="nickname"
-            name="nickname"
-            placeholder="닉네임을 입력하세요. (3글자 이상)"
-            value={formData.nickname}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className={styles.formGroup}>
-          <label htmlFor="birth_date">생년월일 (선택)</label>
-          <input
-            type="date"
-            id="birth_date"
-            name="birth_date"
-            value={formData.birth_date}
-            onChange={handleChange}
-          />
-        </div>
-        <button type="submit" className={styles.submitButton}>
-          회원가입
-        </button>
-      </form>
-=======
     <div>
       <h2 className={styles.SignUp}>회원가입</h2>
       <div className={styles.signupContainer}>
@@ -533,7 +373,6 @@ function SignUp() {
           </div>
         )}
       </div>
->>>>>>> fix
     </div>
   );
 }

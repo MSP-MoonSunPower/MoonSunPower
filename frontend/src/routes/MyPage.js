@@ -9,11 +9,7 @@ function MyPage() {
   useEffect(() => {
     if (!alertShown) {
       setAlertShown(true);
-<<<<<<< HEAD
-      alert("MyPage는 4월 중에 만나볼 수 있습니다!");
-=======
       alert("MyPage는 5월 중에 만나볼 수 있습니다!");
->>>>>>> fix
       navigate("/");
     }
   }, [alertShown, navigate]);

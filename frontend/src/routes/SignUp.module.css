@@ -1,24 +1,3 @@
-<<<<<<< HEAD
-.signupContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  padding: 1rem;
-}
-.SignUp {
-  font-family: "NanumSquareNeo";
-  color: #ff6363;
-  margin-bottom: 1px;
-  font-size: 24px;
-}
-.signupForm {
-  width: 100%;
-  max-width: 600px;
-  padding: 2rem;
-  border: 2px solid #ffffff;
-  border-radius: 16px;
-=======
 .SignUp {
   font-family: "NanumSquareNeo";
   color: #ff6363;
@@ -92,7 +71,6 @@
   padding: 2rem;
   border-radius: 16px;
   background-color: #fff;
->>>>>>> fix
 }
 
 .formGroup {
@@ -102,17 +80,10 @@
 }
 
 .formGroup label {
-<<<<<<< HEAD
-  width: 150px;
-  margin-right: 1rem;
-  font-weight: 600;
-  color: #333;
-=======
   font-family: "NanumSquareNeo";
   width: 150px;
   margin-right: 1rem;
   color: #101010;
->>>>>>> fix
 }
 
 .formGroup input,
@@ -147,8 +118,6 @@
 .submitButton:hover {
   background-color: #ff5252;
 }
-<<<<<<< HEAD
-=======
 
 .modal {
   position: fixed;
@@ -274,4 +243,3 @@
     padding: 8px 16px;
   }
 }
->>>>>>> fix
