@@ -17,11 +17,7 @@ def user_profile_image_upload_to(instance, filename):
 
 class CustomUser(AbstractUser):
     email = models.EmailField("이메일", unique=True)
-<<<<<<< HEAD
     name = models.CharField("이름", max_length=50, blank=True, null=True)  # 한국 이름 (중복 허용)
-=======
-    name = models.CharField("이름", max_length=50, blank=True, null=True)
->>>>>>> fix
     nickname = models.CharField("닉네임", max_length=30, unique=True)
     is_email_verified = models.BooleanField("이메일 인증", default=False)
     birth_date = models.DateField("생년월일", null=True, blank=True)
@@ -35,19 +31,3 @@ class CustomUser(AbstractUser):
         ],
         default='normal'
     )
-<<<<<<< HEAD
-=======
-    profile_image = models.ImageField(
-        "프로필 사진",
-        upload_to=user_profile_image_upload_to,
-        validators=[validate_image_extension],
-        blank=True,
-        null=True
-    )
-    @property
-    def profile_image_url(self):
-        if self.profile_image and hasattr(self.profile_image, 'url'):
-            return self.profile_image.url
-        # 기본 프사 URL (실제 파일 경로에 맞게 수정)
-        return '/static/images/default_profile.png'
->>>>>>> fix
