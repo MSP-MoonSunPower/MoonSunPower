@@ -36,15 +36,22 @@ def get_secret(setting):
         raise ImproperlyConfigured(error_msg)
 SECRET_KEY = get_secret("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'moonsunpower.com']
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'localhost',
+    'moonsunpower.com',
+    'www.moonsunpower.com',
+    'test.moonsunpower.com'
+]
 
-AWS_ACCESS_KEY_ID = get_secret("AWS_ACCESS_KEY_ID")
-AWS_SECRET_ACCESS_KEY = get_secret("AWS_SECRET_ACCESS_KEY")
-AWS_STORAGE_BUCKET_NAME = get_secret("AWS_STORAGE_BUCKET_NAME")
-AWS_S3_REGION_NAME = get_secret("AWS_S3_REGION_NAME")
-AWS_S3_CUSTOM_DOMAIN = get_secret("AWS_S3_CUSTOM_DOMAIN")
+
+# AWS_ACCESS_KEY_ID = get_secret("AWS_ACCESS_KEY_ID")
+# AWS_SECRET_ACCESS_KEY = get_secret("AWS_SECRET_ACCESS_KEY")
+# AWS_STORAGE_BUCKET_NAME = get_secret("AWS_STORAGE_BUCKET_NAME")
+# AWS_S3_REGION_NAME = get_secret("AWS_S3_REGION_NAME")
+# AWS_S3_CUSTOM_DOMAIN = get_secret("AWS_S3_CUSTOM_DOMAIN")
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -80,7 +87,17 @@ MIDDLEWARE = [
 ]
 ROOT_URLCONF = 'moonsunpowerback.urls'
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    "https://moonsunpower.com",
+    "https://www.moonsunpower.com",
+    "https://test.moonsunpower.com"
+]
+CSRF_TRUSTED_ORIGINS = [
+    "https://moonsunpower.com",
+    "https://www.moonsunpower.com",
+    "https://test.moonsunpower.com"
+]
+
 
 
 TEMPLATES = [
@@ -151,12 +168,18 @@ USE_TZ = True
 # settings.py
 
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
 
 
-MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
-STATIC_URL = 'django_static/'
+# MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
+# STATIC_URL = 'django_static/'
+
+STATIC_URL = '/django_static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
