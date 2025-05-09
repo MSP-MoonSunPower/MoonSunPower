@@ -1,3 +1,4 @@
+powerback$ cat settings.py
 """
 Django settings for moonsunpowerback project.
 
@@ -27,7 +28,7 @@ from django.core.exceptions import ImproperlyConfigured
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
-secret_file = os.path.join(BASE_DIR, 'secrets.json') 
+secret_file = os.path.join(BASE_DIR, 'secrets.json')
 with open(secret_file) as f:
     secrets = json.loads(f.read())
 
@@ -41,7 +42,7 @@ SECRET_KEY = get_secret("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'moonsunpower.com', 'test.moonsunpower.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'moonsunpower.com']
 
 AWS_ACCESS_KEY_ID = get_secret("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = get_secret("AWS_SECRET_ACCESS_KEY")
@@ -57,7 +58,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_celery_results', 
+    'django_celery_results',
     'django_celery_beat',
     'rest_framework',
     'rest_framework.authtoken',
@@ -174,13 +175,13 @@ USE_TZ = True
 # STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
 
 
+#MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
+#STATIC_URL = '/django_static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-FRONTEND_STATIC_URL = '/static/'
-
-STATIC_URL = '/django-static/'
+STATIC_URL = '/django_static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
@@ -191,7 +192,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
-SITE_ID = 1  
+SITE_ID = 1
 
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
@@ -201,7 +202,7 @@ AUTHENTICATION_BACKENDS = (
 CSRF_TRUSTED_ORIGINS = ['https://*.moonsunpower.com','https://*.127.0.0.1',"http://localhost:3000"]
 
 ##CELERY
-CELERY_BROKER_URL = 'redis://localhost:6379/0' 
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
 CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 CELERY_RESULT_BACKEND = 'django-db'
 CELERY_CACHE_BACKEND = 'django-cache'

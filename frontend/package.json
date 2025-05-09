@@ -2,7 +2,7 @@
   "name": "moon-sun-power",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/frontend_static",
+  "homepage": "/",
   "dependencies": {
     "@lasbe/react-scroll-animation": "^2.0.6",
     "@radix-ui/react-accordion": "^1.2.3",
@@ -48,7 +48,15 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.0",
     "autoprefixer": "^10.4.20",
+    "commitizen": "^4.3.1",
+    "cz-customizable": "^7.4.0",
     "postcss": "^8.5.1",
     "vite-plugin-eslint": "^1.8.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-customizable",
+      "config": "./.cz-config.js"
+    }
   }
 }
